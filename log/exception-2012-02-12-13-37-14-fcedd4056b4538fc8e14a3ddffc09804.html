@@ -1,0 +1,1867 @@
+<!DOCTYPE html><!-- "' --></script></style></pre></xmp></table>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex,noarchive">
+	<meta name="generator" content="Nette Framework">
+
+	<title>InvalidArgumentException</title><!-- Document has to be managed for single computation User@000000002a6b24450000000043b8ef57 -->
+
+	<style type="text/css" class="nette">html{overflow-y:scroll}body{margin:0 0 2em;padding:0}#netteBluescreen{font:9pt/1.5 Verdana,sans-serif;background:white;color:#333;position:absolute;left:0;top:0;width:100%;z-index:23178;text-align:left}#netteBluescreen *{font:inherit;color:inherit;background:transparent;border:none;margin:0;padding:0;text-align:inherit;text-indent:0}#netteBluescreen b{font-weight:bold}#netteBluescreen i{font-style:italic}#netteBluescreen a{text-decoration:none;color:#328ADC;padding:2px 4px;margin:-2px -4px}#netteBluescreen a:hover,#netteBluescreen a:active,#netteBluescreen a:focus{color:#085AA3}#netteBluescreen a abbr{font-family:sans-serif;color:#BBB}#netteBluescreenIcon{position:absolute;right:.5em;top:.5em;z-index:23179;text-decoration:none;background:#CD1818;padding:3px}#netteBluescreenError{background:#CD1818;color:white;font:13pt/1.5 Verdana,sans-serif!important;display:block}#netteBluescreenError #netteBsSearch{color:#CD1818;font-size:.7em}#netteBluescreenError:hover #netteBsSearch{color:#ED8383}#netteBluescreen h1{font-size:18pt;font-weight:normal;text-shadow:1px 1px 0 rgba(0,0,0,.4);margin:.7em 0}#netteBluescreen h2{font:14pt/1.5 sans-serif!important;color:#888;margin:.6em 0}#netteBluescreen h3{font:bold 10pt/1.5 Verdana,sans-serif!important;margin:1em 0;padding:0}#netteBluescreen p,#netteBluescreen pre{margin:.8em 0}#netteBluescreen pre,#netteBluescreen code,#netteBluescreen table{font:9pt/1.5 Consolas,monospace!important}#netteBluescreen pre,#netteBluescreen table{background:#FDF5CE;padding:.4em .7em;border:1px dotted silver;overflow:auto}#netteBluescreen pre div{min-width:100%;float:left;_float:none;white-space:pre}#netteBluescreen table pre{padding:0;margin:0;border:none}#netteBluescreen pre .php-array,#netteBluescreen pre .php-object{color:#C22}#netteBluescreen pre .php-string{color:#080}#netteBluescreen pre .php-int,#netteBluescreen pre .php-float,#netteBluescreen pre .php-null,#netteBluescreen pre .php-bool{color:#328ADC}#netteBluescreen pre .php-visibility{font-size:85%;color:#998}#netteBluescreen pre.nette-dump a{color:#333}#netteBluescreen div.panel{padding:1px 25px}#netteBluescreen div.inner{background:#F4F3F1;padding:.1em 1em 1em;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px}#netteBluescreen table{border-collapse:collapse;width:100%}#netteBluescreen .outer{overflow:auto}#netteBluescreen td,#netteBluescreen th{vertical-align:top;text-align:left;padding:2px 6px;border:1px solid #e6dfbf}#netteBluescreen th{font-weight:bold}#netteBluescreen tr>:first-child{width:20%}#netteBluescreen tr:nth-child(2n),#netteBluescreen tr:nth-child(2n) pre{background-color:#F7F0CB}#netteBluescreen ol{margin:1em 0;padding-left:2.5em}#netteBluescreen ul{font:7pt/1.5 Verdana,sans-serif!important;padding:2em 4em;margin:1em 0 0;color:#777;background:#F6F5F3 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAAjCAMAAADbuxbOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADBQTFRF/fz24d7Y7Onj5uLd9vPu3drUzMvG09LN39zW8e7o2NbQ3NnT29jS0M7J1tXQAAAApvmsFgAAABB0Uk5T////////////////////AOAjXRkAAAKlSURBVHja7FbbsqQgDAwENEgc//9vN+SCWDtbtXPmZR/Wc6o02mlC58LA9ckFAOszvMV8xNgyUjyXhojfMVKvRL0ZHavxXYy5JrmchMdzou8YlTClxajtK8ZGGpWRoBr1+gFjKfHkJPbizabLgzE3pH7Iu4K980xgFvlrVzMZoVBWhtvouCDdcTDmTgMCJdVxJ9MKO6XxnliM7hxi5lbj2ZVM4l8DqYyKoNLYcfqBB1/LpHYxEcfVG6ZpMDgyFUVWY/Q1sSYPpIdSAKWqLWL0XqWiMWc4hpH0OQOMOAgdycY4N9Sb7wWANQs3rsDSdLAYiuxi5siVfOhBWIrtH0G3kNaF/8Q4kCPE1kMucG/ZMUBUCOgiKJkPuWWTLGVgLGpwns1DraUayCtoBqERyaYtVsm85NActRooezvSLO/sKZP/nq8n4+xcyjNsRu8zW6KWpdb7wjiQd4WrtFZYFiKHENSmWp6xshh96c2RQ+c7Lt+qbijyEjHWUJ/pZsy8MGIUuzNiPySK2Gqoh6ZTRF6ko6q3nVTkaA//itIrDpW6l3SLo8juOmqMXkYknu5FdQxWbhCfKHEGDhxxyTVaXJF3ZjSl3jMksjSOOKmne9pI+mcG5QvaUJhI9HpkmRo2NpCrDJvsktRhRE2MM6F2n7dt4OaMUq8bCctk0+PoMRzL+1l5PZ2eyM/Owr86gf8z/tOM53lom5+nVcFuB+eJVzlXwAYy9TZ9s537tfqcsJWbEU4nBngZo6FfO9T9CdhfBtmk2dLiAy8uS4zwOpMx2HqYbTC+amNeAYTpsP4SIgvWfUBWXxn3CMHW3ffd7k3+YIkx7w0t/CVGvcPejoeOlzOWzeGbawOHqXQGUTMZRcfj4XPCgW9y/fuvVn8zD9P1QHzv80uAAQA0i3Jer7Jr7gAAAABJRU5ErkJggg==') 99% 10px no-repeat;border-top:1px solid #DDD}#netteBluescreen .highlight{background:#CD1818;color:white;font-weight:bold;font-style:normal;display:block;padding:0 .4em;margin:0 -.4em}#netteBluescreen .line{color:#9F9C7F;font-weight:normal;font-style:normal}#netteBluescreen a[href^=editor\:]{color:inherit;border-bottom:1px dotted #C1D2E1}</style>
+</head>
+
+
+
+<body>
+<div id="netteBluescreen">
+	<a id="netteBluescreenIcon" href="#" rel="next"><abbr>&#x25bc;</abbr></a
+
+	><div>
+		<div id="netteBluescreenError" class="panel">
+			<h1>InvalidArgumentException</h1>
+
+			<p>Document has to be managed for single computation User@000000002a6b24450000000043b8ef57 <a href="http://www.google.cz/search?sourceid=nette&amp;q=InvalidArgumentException+Document+has+to+be+managed+for+single+computation+User%40000000002a6b24450000000043b8ef57" id="netteBsSearch">search&#x25ba;</a></p>
+		</div>
+
+
+
+				
+			
+
+
+						
+
+
+						
+			<div class="panel">
+			<h2><a href="#" rel="netteBsPnl1">Source file <abbr>&#x25bc;</abbr></a></h2>
+
+			<div id="netteBsPnl1" class="inner">
+				<p><b>File:</b> <a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Clibs%5CDoctrine%5CODM%5CMongoDB%5CUnitOfWork.php&amp;line=515" title="H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\UnitOfWork.php:515">H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\<b>UnitOfWork.php</b></a> &nbsp; <b>Line:</b> 515</p>
+				<pre><div><code><span style="color: #06B"><span style="color: #998; font-style: italic"><span class='line'>505:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;1.&nbsp;All&nbsp;documents&nbsp;scheduled&nbsp;for&nbsp;insertion,&nbsp;(orphan)&nbsp;removals&nbsp;and&nbsp;changes&nbsp;in&nbsp;collections&nbsp;are&nbsp;processed&nbsp;as&nbsp;well!
+<span class='line'>506:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;2.&nbsp;Proxies&nbsp;are&nbsp;skipped.
+<span class='line'>507:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;3.&nbsp;Only&nbsp;if&nbsp;document&nbsp;is&nbsp;properly&nbsp;managed.
+<span class='line'>508:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+<span class='line'>509:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;&nbsp;object&nbsp;$document
+<span class='line'>510:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;void
+<span class='line'>511:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+<span class='line'>512:</span>    &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #D24; font-weight: bold">private&nbsp;function&nbsp;</span><span style="color: #000">computeSingleDocumentChangeSet</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$document</span><span style="color: #D24; font-weight: bold">)
+<span class='line'>513:</span>    &nbsp;&nbsp;&nbsp;&nbsp;{
+<span class='line'>514:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(&nbsp;!&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">isInIdentityMap</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$document</span><span style="color: #D24; font-weight: bold">)&nbsp;)&nbsp;{
+<span class='highlight'>515:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;\InvalidArgumentException("Document&nbsp;has&nbsp;to&nbsp;be&nbsp;managed&nbsp;for&nbsp;single&nbsp;computation&nbsp;"&nbsp;.&nbsp;self::objToStr($document));
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #080"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>516:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>517:</span>    
+<span class='line'>518:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$class&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">dm</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">getClassMetadata</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">get_class</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$document</span><span style="color: #D24; font-weight: bold">));
+<span class='line'>519:</span>    
+</span></span></code></div></pre>			</div></div>
+
+
+
+									<div class="panel">
+				<h2><a href="#" rel="netteBsPnl2">Call stack <abbr>&#x25bc;</abbr></a></h2>
+
+				<div id="netteBsPnl2" class="inner">
+				<ol>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Clibs%5CDoctrine%5CODM%5CMongoDB%5CUnitOfWork.php&amp;line=399" title="H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\UnitOfWork.php:399">H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\<b>UnitOfWork.php</b></a>:399					
+					<a href="#" rel="netteBsSrc1-0">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Doctrine\ODM\MongoDB\UnitOfWork-&gt;					computeSingleDocumentChangeSet
+					(<a href="#" rel="netteBsArgs1-0">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-0">
+						<table>
+						<tr><th>$document</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">User</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+   <span class="php-key">id</span> <span class="php-visibility">private</span> => <span class="php-null">NULL</span>
+   <span class="php-key">login</span> <span class="php-visibility">private</span> => <span class="php-string">"martin"</span> (6)
+   <span class="php-key">password</span> <span class="php-visibility">private</span> => <span class="php-string">"$2a$08$aQzdJrMKD8bvI2S3Qj.RvePswd3y5yZ2dxQby7UfhGNUyLl.d/dm6"</span> (60)
+}</code>
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-0"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'>389:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$defaultOptions&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">dm</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">getConfiguration</span><span style="color: #D24; font-weight: bold">()-&gt;</span><span style="color: #000">getDefaultCommitOptions</span><span style="color: #D24; font-weight: bold">();
+<span class='line'>390:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #000">$options</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>391:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$options&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">array_merge</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$defaultOptions</span><span style="color: #D24; font-weight: bold">,&nbsp;</span><span style="color: #000">$options</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>392:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+<span class='line'>393:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$options&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">$defaultOptions</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>394:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>395:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #998; font-style: italic">//&nbsp;Compute&nbsp;changes&nbsp;done&nbsp;since&nbsp;last&nbsp;commit.
+<span class='line'>396:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #D24; font-weight: bold">if&nbsp;(</span><span style="color: #000">$document&nbsp;</span><span style="color: #D24; font-weight: bold">===&nbsp;</span><span style="color: #000">null</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>397:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">computeChangeSets</span><span style="color: #D24; font-weight: bold">();
+<span class='line'>398:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+<span class='highlight'>399:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;computeSingleDocumentChangeSet($document);
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>400:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>401:</span>    
+<span class='line'>402:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(&nbsp;!&nbsp;(</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">documentInsertions&nbsp;</span><span style="color: #D24; font-weight: bold">||
+<span class='line'>403:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">documentUpserts&nbsp;</span><span style="color: #D24; font-weight: bold">||
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Clibs%5CDoctrine%5CODM%5CMongoDB%5CDocumentManager.php&amp;line=515" title="H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\DocumentManager.php:515">H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\<b>DocumentManager.php</b></a>:515					
+					<a href="#" rel="netteBsSrc1-1">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Doctrine\ODM\MongoDB\UnitOfWork-&gt;					commit
+					(<a href="#" rel="netteBsArgs1-1">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-1">
+						<table>
+						<tr><th>$document</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">User</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+   <span class="php-key">id</span> <span class="php-visibility">private</span> => <span class="php-null">NULL</span>
+   <span class="php-key">login</span> <span class="php-visibility">private</span> => <span class="php-string">"martin"</span> (6)
+   <span class="php-key">password</span> <span class="php-visibility">private</span> => <span class="php-string">"$2a$08$aQzdJrMKD8bvI2S3Qj.RvePswd3y5yZ2dxQby7UfhGNUyLl.d/dm6"</span> (60)
+}</code>
+</pre></td></tr>
+<tr><th>$options</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-array">array</span>(1) <abbr>&#x25bc;</abbr> </a><code>{
+   <span class="php-key">safe</span> => <span class="php-bool">TRUE</span>
+}</code>
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-1"><pre><div><code><span style="color: #06B"><span style="color: #998; font-style: italic"><span class='line'>505:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Flushes&nbsp;all&nbsp;changes&nbsp;to&nbsp;objects&nbsp;that&nbsp;have&nbsp;been&nbsp;queued&nbsp;up&nbsp;to&nbsp;now&nbsp;to&nbsp;the&nbsp;database.
+<span class='line'>506:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;effectively&nbsp;synchronizes&nbsp;the&nbsp;in-memory&nbsp;state&nbsp;of&nbsp;managed&nbsp;objects&nbsp;with&nbsp;the
+<span class='line'>507:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;database.
+<span class='line'>508:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+<span class='line'>509:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;object&nbsp;$document
+<span class='line'>510:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;array&nbsp;$options&nbsp;Array&nbsp;of&nbsp;options&nbsp;to&nbsp;be&nbsp;used&nbsp;with&nbsp;batchInsert(),&nbsp;update()&nbsp;and&nbsp;remove()
+<span class='line'>511:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+<span class='line'>512:</span>    &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #D24; font-weight: bold">public&nbsp;function&nbsp;</span><span style="color: #000">flush</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$document&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">null</span><span style="color: #D24; font-weight: bold">,&nbsp;array&nbsp;</span><span style="color: #000">$options&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;array())
+<span class='line'>513:</span>    &nbsp;&nbsp;&nbsp;&nbsp;{
+<span class='line'>514:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">errorIfClosed</span><span style="color: #D24; font-weight: bold">();
+<span class='highlight'>515:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;unitOfWork-&gt;commit($document,&nbsp;$options);
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>516:</span>    &nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>517:</span>    
+<span class='line'>518:</span>    &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #998; font-style: italic">/**
+<span class='line'>519:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Gets&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;document&nbsp;identified&nbsp;by&nbsp;the&nbsp;given&nbsp;type&nbsp;and&nbsp;identifier
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Capp%5Cconsole%5Ccommands%5CCreateUser.php&amp;line=74" title="H:\inetpub\nalada.sk\app\console\commands\CreateUser.php:74">H:\inetpub\nalada.sk\app\console\commands\<b>CreateUser.php</b></a>:74					
+					<a href="#" rel="netteBsSrc1-2">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Doctrine\ODM\MongoDB\DocumentManager-&gt;					flush
+					(<a href="#" rel="netteBsArgs1-2">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-2">
+						<table>
+						<tr><th>$document</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">User</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+   <span class="php-key">id</span> <span class="php-visibility">private</span> => <span class="php-null">NULL</span>
+   <span class="php-key">login</span> <span class="php-visibility">private</span> => <span class="php-string">"martin"</span> (6)
+   <span class="php-key">password</span> <span class="php-visibility">private</span> => <span class="php-string">"$2a$08$aQzdJrMKD8bvI2S3Qj.RvePswd3y5yZ2dxQby7UfhGNUyLl.d/dm6"</span> (60)
+}</code>
+</pre></td></tr>
+<tr><th>$options</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-array">array</span>(1) <abbr>&#x25bc;</abbr> </a><code>{
+   <span class="php-key">safe</span> => <span class="php-bool">TRUE</span>
+}</code>
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-2"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'>64:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>65:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='line'>66:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$passwordHasher&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;new&nbsp;\</span><span style="color: #000">Security</span><span style="color: #D24; font-weight: bold">\</span><span style="color: #000">PasswordHasher</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>67:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='line'>68:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$user&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;new&nbsp;\</span><span style="color: #000">User</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>69:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$user</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">setLogin</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$login</span><span style="color: #D24; font-weight: bold">)-&gt;</span><span style="color: #000">setPassword</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$passwordHasher</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">hashPassword</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$password</span><span style="color: #D24; font-weight: bold">));
+<span class='line'>70:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='line'>71:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$dm</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">persist</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$user</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>72:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$dm&nbsp;</span><span style="color: #D24; font-weight: bold">instanceof&nbsp;\</span><span style="color: #000">Doctrine</span><span style="color: #D24; font-weight: bold">\</span><span style="color: #000">ODM</span><span style="color: #D24; font-weight: bold">\</span><span style="color: #000">MongoDB</span><span style="color: #D24; font-weight: bold">\</span><span style="color: #000">DocumentManager</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>73:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='highlight'>74:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$dm-&gt;flush($user,&nbsp;array('safe'&nbsp;=&gt;&nbsp;true));
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #080"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>75:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class='line'>76:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$output</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">writeln</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #080">'Done'</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>77:</span>    &nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>78:</span>    
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Clibs%5CSymfony%5CConsole%5CCommand%5CCommand.php&amp;line=237" title="H:\inetpub\nalada.sk\libs\Symfony\Console\Command\Command.php:237">H:\inetpub\nalada.sk\libs\Symfony\Console\Command\<b>Command.php</b></a>:237					
+					<a href="#" rel="netteBsSrc1-3">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Console\Command\CreateUser-&gt;					execute
+					(<a href="#" rel="netteBsArgs1-3">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-3">
+						<table>
+						<tr><th>$input</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">Symfony\Component\Console\Input\ArgvInput</span>(6) <abbr>&#x25bc;</abbr> </a><code>{
+   <a href='#' rel='next'><span class="php-key">tokens</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>[
+      <span class="php-key">0</span> => <span class="php-string">"app:user:create"</span> (15)
+      <span class="php-key">1</span> => <span class="php-string">"martin"</span> (6)
+      <span class="php-key">2</span> => <span class="php-string">"martin"</span> (6)
+   ]</code>
+   <span class="php-key">parsed</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(0) 
+   <a href='#' rel='next'><span class="php-key">definition</span> <span class="php-visibility">protected</span> => <span class="php-object">Symfony\Component\Console\Input\InputDefinition</span>(6) <abbr>&#x25bc;</abbr> </a><code>{
+      <a href='#' rel='next'><span class="php-key">arguments</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">command</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+         <span class="php-key">login</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+         <span class="php-key">password</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+      }</code>
+      <span class="php-key">requiredCount</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+      <span class="php-key">hasAnArrayArgument</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+      <span class="php-key">hasOptional</span> <span class="php-visibility">private</span> => <span class="php-bool">TRUE</span>
+      <a href='#' rel='next'><span class="php-key">options</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(7) <abbr>&#x25ba;</abbr> </a><code class="nette-collapsed">{
+         <span class="php-key">help</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">quiet</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">verbose</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">version</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">ansi</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">&quot;no-ansi&quot;</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">&quot;no-interaction&quot;</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+      }</code>
+      <a href='#' rel='next'><span class="php-key">shortcuts</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(5) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">h</span> => <span class="php-string">"help"</span> (4)
+         <span class="php-key">q</span> => <span class="php-string">"quiet"</span> (5)
+         <span class="php-key">v</span> => <span class="php-string">"verbose"</span> (7)
+         <span class="php-key">V</span> => <span class="php-string">"version"</span> (7)
+         <span class="php-key">n</span> => <span class="php-string">"no-interaction"</span> (14)
+      }</code>
+   }</code>
+   <span class="php-key">options</span> <span class="php-visibility">protected</span> => <span class="php-array">array</span>(0) 
+   <a href='#' rel='next'><span class="php-key">arguments</span> <span class="php-visibility">protected</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">command</span> => <span class="php-string">"app:user:create"</span> (15)
+      <span class="php-key">login</span> => <span class="php-string">"martin"</span> (6)
+      <span class="php-key">password</span> => <span class="php-string">"martin"</span> (6)
+   }</code>
+   <span class="php-key">interactive</span> <span class="php-visibility">protected</span> => <span class="php-bool">TRUE</span>
+}</code>
+</pre></td></tr>
+<tr><th>$output</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">Symfony\Component\Console\Output\ConsoleOutput</span>(4) <abbr>&#x25bc;</abbr> </a><code>{
+   <a href='#' rel='next'><span class="php-key">stderr</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Output\StreamOutput</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">stream</span> <span class="php-visibility">private</span> => <span class="php-resource">stream resource</span>
+      <span class="php-key">verbosity</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+      <a href='#' rel='next'><span class="php-key">formatter</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatter</span>(2) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">decorated</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+         <span class="php-key">styles</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(4) { ... }
+      }</code>
+   }</code>
+   <span class="php-key">stream</span> <span class="php-visibility">private</span> => <span class="php-resource">stream resource</span>
+   <span class="php-key">verbosity</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+   <a href='#' rel='next'><span class="php-key">formatter</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatter</span>(2) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">decorated</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+      <a href='#' rel='next'><span class="php-key">styles</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(4) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">error</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">info</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">comment</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">question</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+      }</code>
+   }</code>
+}</code>
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-3"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'>227:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #000">$input</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">isInteractive</span><span style="color: #D24; font-weight: bold">())&nbsp;{
+<span class='line'>228:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">interact</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$input</span><span style="color: #D24; font-weight: bold">,&nbsp;</span><span style="color: #000">$output</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>229:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>230:</span>    
+<span class='line'>231:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$input</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">validate</span><span style="color: #D24; font-weight: bold">();
+<span class='line'>232:</span>    
+<span class='line'>233:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">code</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>234:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #000">call_user_func</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">code</span><span style="color: #D24; font-weight: bold">,&nbsp;</span><span style="color: #000">$input</span><span style="color: #D24; font-weight: bold">,&nbsp;</span><span style="color: #000">$output</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>235:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>236:</span>    
+<span class='highlight'>237:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$this-&gt;execute($input,&nbsp;$output);
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>238:</span>    &nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>239:</span>    
+<span class='line'>240:</span>    &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #998; font-style: italic">/**
+<span class='line'>241:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Sets&nbsp;the&nbsp;code&nbsp;to&nbsp;execute&nbsp;when&nbsp;running&nbsp;this&nbsp;command.
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Clibs%5CSymfony%5CConsole%5CApplication.php&amp;line=193" title="H:\inetpub\nalada.sk\libs\Symfony\Console\Application.php:193">H:\inetpub\nalada.sk\libs\Symfony\Console\<b>Application.php</b></a>:193					
+					<a href="#" rel="netteBsSrc1-4">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Symfony\Component\Console\Command\Command-&gt;					run
+					(<a href="#" rel="netteBsArgs1-4">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-4">
+						<table>
+						<tr><th>$input</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">Symfony\Component\Console\Input\ArgvInput</span>(6) <abbr>&#x25bc;</abbr> </a><code>{
+   <a href='#' rel='next'><span class="php-key">tokens</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>[
+      <span class="php-key">0</span> => <span class="php-string">"app:user:create"</span> (15)
+      <span class="php-key">1</span> => <span class="php-string">"martin"</span> (6)
+      <span class="php-key">2</span> => <span class="php-string">"martin"</span> (6)
+   ]</code>
+   <span class="php-key">parsed</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(0) 
+   <a href='#' rel='next'><span class="php-key">definition</span> <span class="php-visibility">protected</span> => <span class="php-object">Symfony\Component\Console\Input\InputDefinition</span>(6) <abbr>&#x25bc;</abbr> </a><code>{
+      <a href='#' rel='next'><span class="php-key">arguments</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">command</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+         <span class="php-key">login</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+         <span class="php-key">password</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+      }</code>
+      <span class="php-key">requiredCount</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+      <span class="php-key">hasAnArrayArgument</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+      <span class="php-key">hasOptional</span> <span class="php-visibility">private</span> => <span class="php-bool">TRUE</span>
+      <a href='#' rel='next'><span class="php-key">options</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(7) <abbr>&#x25ba;</abbr> </a><code class="nette-collapsed">{
+         <span class="php-key">help</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">quiet</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">verbose</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">version</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">ansi</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">&quot;no-ansi&quot;</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">&quot;no-interaction&quot;</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+      }</code>
+      <a href='#' rel='next'><span class="php-key">shortcuts</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(5) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">h</span> => <span class="php-string">"help"</span> (4)
+         <span class="php-key">q</span> => <span class="php-string">"quiet"</span> (5)
+         <span class="php-key">v</span> => <span class="php-string">"verbose"</span> (7)
+         <span class="php-key">V</span> => <span class="php-string">"version"</span> (7)
+         <span class="php-key">n</span> => <span class="php-string">"no-interaction"</span> (14)
+      }</code>
+   }</code>
+   <span class="php-key">options</span> <span class="php-visibility">protected</span> => <span class="php-array">array</span>(0) 
+   <a href='#' rel='next'><span class="php-key">arguments</span> <span class="php-visibility">protected</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">command</span> => <span class="php-string">"app:user:create"</span> (15)
+      <span class="php-key">login</span> => <span class="php-string">"martin"</span> (6)
+      <span class="php-key">password</span> => <span class="php-string">"martin"</span> (6)
+   }</code>
+   <span class="php-key">interactive</span> <span class="php-visibility">protected</span> => <span class="php-bool">TRUE</span>
+}</code>
+</pre></td></tr>
+<tr><th>$output</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">Symfony\Component\Console\Output\ConsoleOutput</span>(4) <abbr>&#x25bc;</abbr> </a><code>{
+   <a href='#' rel='next'><span class="php-key">stderr</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Output\StreamOutput</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">stream</span> <span class="php-visibility">private</span> => <span class="php-resource">stream resource</span>
+      <span class="php-key">verbosity</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+      <a href='#' rel='next'><span class="php-key">formatter</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatter</span>(2) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">decorated</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+         <span class="php-key">styles</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(4) { ... }
+      }</code>
+   }</code>
+   <span class="php-key">stream</span> <span class="php-visibility">private</span> => <span class="php-resource">stream resource</span>
+   <span class="php-key">verbosity</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+   <a href='#' rel='next'><span class="php-key">formatter</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatter</span>(2) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">decorated</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+      <a href='#' rel='next'><span class="php-key">styles</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(4) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">error</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">info</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">comment</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">question</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+      }</code>
+   }</code>
+}</code>
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-4"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'>183:</span>    
+<span class='line'>184:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #000">$name</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>185:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$name&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #080">'list'</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>186:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$input&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;new&nbsp;</span><span style="color: #000">ArrayInput</span><span style="color: #D24; font-weight: bold">(array(</span><span style="color: #080">'command'&nbsp;</span><span style="color: #D24; font-weight: bold">=&gt;&nbsp;</span><span style="color: #080">'list'</span><span style="color: #D24; font-weight: bold">));
+<span class='line'>187:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>188:</span>    
+<span class='line'>189:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #998; font-style: italic">//&nbsp;the&nbsp;command&nbsp;name&nbsp;MUST&nbsp;be&nbsp;the&nbsp;first&nbsp;element&nbsp;of&nbsp;the&nbsp;input
+<span class='line'>190:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$command&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">find</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$name</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>191:</span>    
+<span class='line'>192:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">runningCommand&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">$command</span><span style="color: #D24; font-weight: bold">;
+<span class='highlight'>193:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$statusCode&nbsp;=&nbsp;$command-&gt;run($input,&nbsp;$output);
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>194:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">runningCommand&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">null</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>195:</span>    
+<span class='line'>196:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #000">is_numeric</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #000">$statusCode</span><span style="color: #D24; font-weight: bold">)&nbsp;?&nbsp;</span><span style="color: #000">$statusCode&nbsp;</span><span style="color: #D24; font-weight: bold">:&nbsp;</span><span style="color: #000">0</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>197:</span>    &nbsp;&nbsp;&nbsp;&nbsp;}
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Clibs%5CSymfony%5CConsole%5CApplication.php&amp;line=106" title="H:\inetpub\nalada.sk\libs\Symfony\Console\Application.php:106">H:\inetpub\nalada.sk\libs\Symfony\Console\<b>Application.php</b></a>:106					
+					<a href="#" rel="netteBsSrc1-5">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Symfony\Component\Console\Application-&gt;					doRun
+					(<a href="#" rel="netteBsArgs1-5">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-5">
+						<table>
+						<tr><th>$input</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">Symfony\Component\Console\Input\ArgvInput</span>(6) <abbr>&#x25bc;</abbr> </a><code>{
+   <a href='#' rel='next'><span class="php-key">tokens</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>[
+      <span class="php-key">0</span> => <span class="php-string">"app:user:create"</span> (15)
+      <span class="php-key">1</span> => <span class="php-string">"martin"</span> (6)
+      <span class="php-key">2</span> => <span class="php-string">"martin"</span> (6)
+   ]</code>
+   <span class="php-key">parsed</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(0) 
+   <a href='#' rel='next'><span class="php-key">definition</span> <span class="php-visibility">protected</span> => <span class="php-object">Symfony\Component\Console\Input\InputDefinition</span>(6) <abbr>&#x25bc;</abbr> </a><code>{
+      <a href='#' rel='next'><span class="php-key">arguments</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">command</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+         <span class="php-key">login</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+         <span class="php-key">password</span> => <span class="php-object">Symfony\Component\Console\Input\InputArgument</span>(4) { ... }
+      }</code>
+      <span class="php-key">requiredCount</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+      <span class="php-key">hasAnArrayArgument</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+      <span class="php-key">hasOptional</span> <span class="php-visibility">private</span> => <span class="php-bool">TRUE</span>
+      <a href='#' rel='next'><span class="php-key">options</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(7) <abbr>&#x25ba;</abbr> </a><code class="nette-collapsed">{
+         <span class="php-key">help</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">quiet</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">verbose</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">version</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">ansi</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">&quot;no-ansi&quot;</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+         <span class="php-key">&quot;no-interaction&quot;</span> => <span class="php-object">Symfony\Component\Console\Input\InputOption</span>(5) { ... }
+      }</code>
+      <a href='#' rel='next'><span class="php-key">shortcuts</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(5) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">h</span> => <span class="php-string">"help"</span> (4)
+         <span class="php-key">q</span> => <span class="php-string">"quiet"</span> (5)
+         <span class="php-key">v</span> => <span class="php-string">"verbose"</span> (7)
+         <span class="php-key">V</span> => <span class="php-string">"version"</span> (7)
+         <span class="php-key">n</span> => <span class="php-string">"no-interaction"</span> (14)
+      }</code>
+   }</code>
+   <span class="php-key">options</span> <span class="php-visibility">protected</span> => <span class="php-array">array</span>(0) 
+   <a href='#' rel='next'><span class="php-key">arguments</span> <span class="php-visibility">protected</span> => <span class="php-array">array</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">command</span> => <span class="php-string">"app:user:create"</span> (15)
+      <span class="php-key">login</span> => <span class="php-string">"martin"</span> (6)
+      <span class="php-key">password</span> => <span class="php-string">"martin"</span> (6)
+   }</code>
+   <span class="php-key">interactive</span> <span class="php-visibility">protected</span> => <span class="php-bool">TRUE</span>
+}</code>
+</pre></td></tr>
+<tr><th>$output</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-object">Symfony\Component\Console\Output\ConsoleOutput</span>(4) <abbr>&#x25bc;</abbr> </a><code>{
+   <a href='#' rel='next'><span class="php-key">stderr</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Output\StreamOutput</span>(3) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">stream</span> <span class="php-visibility">private</span> => <span class="php-resource">stream resource</span>
+      <span class="php-key">verbosity</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+      <a href='#' rel='next'><span class="php-key">formatter</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatter</span>(2) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">decorated</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+         <span class="php-key">styles</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(4) { ... }
+      }</code>
+   }</code>
+   <span class="php-key">stream</span> <span class="php-visibility">private</span> => <span class="php-resource">stream resource</span>
+   <span class="php-key">verbosity</span> <span class="php-visibility">private</span> => <span class="php-int">1</span>
+   <a href='#' rel='next'><span class="php-key">formatter</span> <span class="php-visibility">private</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatter</span>(2) <abbr>&#x25bc;</abbr> </a><code>{
+      <span class="php-key">decorated</span> <span class="php-visibility">private</span> => <span class="php-bool">FALSE</span>
+      <a href='#' rel='next'><span class="php-key">styles</span> <span class="php-visibility">private</span> => <span class="php-array">array</span>(4) <abbr>&#x25bc;</abbr> </a><code>{
+         <span class="php-key">error</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">info</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">comment</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+         <span class="php-key">question</span> => <span class="php-object">Symfony\Component\Console\Formatter\OutputFormatterStyle</span>(3) { ... }
+      }</code>
+   }</code>
+}</code>
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-5"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'> 96:</span>    &nbsp;&nbsp;&nbsp;&nbsp;{
+<span class='line'> 97:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #000">null&nbsp;</span><span style="color: #D24; font-weight: bold">===&nbsp;</span><span style="color: #000">$input</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'> 98:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$input&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;new&nbsp;</span><span style="color: #000">ArgvInput</span><span style="color: #D24; font-weight: bold">();
+<span class='line'> 99:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>100:</span>    
+<span class='line'>101:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #000">null&nbsp;</span><span style="color: #D24; font-weight: bold">===&nbsp;</span><span style="color: #000">$output</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>102:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$output&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;new&nbsp;</span><span style="color: #000">ConsoleOutput</span><span style="color: #D24; font-weight: bold">();
+<span class='line'>103:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<span class='line'>104:</span>    
+<span class='line'>105:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+<span class='highlight'>106:    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$statusCode&nbsp;=&nbsp;$this-&gt;doRun($input,&nbsp;$output);
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>107:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(\</span><span style="color: #000">Exception&nbsp;$e</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>108:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #000">$this</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">catchExceptions</span><span style="color: #D24; font-weight: bold">)&nbsp;{
+<span class='line'>109:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;</span><span style="color: #000">$e</span><span style="color: #D24; font-weight: bold">;
+<span class='line'>110:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Capp%5Cbootstrap.php&amp;line=46" title="H:\inetpub\nalada.sk\app\bootstrap.php:46">H:\inetpub\nalada.sk\app\<b>bootstrap.php</b></a>:46					
+					<a href="#" rel="netteBsSrc1-6">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+					Symfony\Component\Console\Application-&gt;					run
+					()
+					</p>
+
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-6"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'>36:</span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000">$compiler</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">addExtension</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #080">'consoleApp'</span><span style="color: #D24; font-weight: bold">,&nbsp;new&nbsp;\</span><span style="color: #000">Extensions</span><span style="color: #D24; font-weight: bold">\</span><span style="color: #000">ConsoleExtension</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>37:</span>    };
+<span class='line'>38:</span>    
+<span class='line'>39:</span>    </span><span style="color: #000">$container&nbsp;</span><span style="color: #D24; font-weight: bold">=&nbsp;</span><span style="color: #000">$configurator</span><span style="color: #D24; font-weight: bold">-&gt;</span><span style="color: #000">createContainer</span><span style="color: #D24; font-weight: bold">();
+<span class='line'>40:</span>    
+<span class='line'>41:</span>    if(</span><span style="color: #000">PHP_SAPI&nbsp;</span><span style="color: #D24; font-weight: bold">===&nbsp;</span><span style="color: #080">'cli'</span><span style="color: #D24; font-weight: bold">)
+<span class='line'>42:</span>    {
+<span class='line'>43:</span>    &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #998; font-style: italic">//$container-&gt;application-&gt;allowedMethods&nbsp;=&nbsp;FALSE;
+<span class='line'>44:</span>    &nbsp;&nbsp;&nbsp;&nbsp;//$container-&gt;router[]&nbsp;=&nbsp;new&nbsp;Routers\CliRouter($container);
+<span class='line'>45:</span>    &nbsp;&nbsp;&nbsp;&nbsp;
+<span class='highlight'>46:    &nbsp;&nbsp;&nbsp;&nbsp;$container-&gt;console-&gt;run();
+</span></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"><span class='line'>47:</span>    }
+<span class='line'>48:</span>    else
+<span class='line'>49:</span>    {
+<span class='line'>50:</span>    &nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #998; font-style: italic">//&nbsp;Setup&nbsp;router
+</span></span></code></div></pre></div>
+					
+					</li>
+										<li><p>
+
+											<a href="editor://open/?file=H%3A%5Cinetpub%5Cnalada.sk%5Cwww%5Cindex.php&amp;line=16" title="H:\inetpub\nalada.sk\www\index.php:16">H:\inetpub\nalada.sk\www\<b>index.php</b></a>:16					
+					<a href="#" rel="netteBsSrc1-7">source <abbr>&#x25ba;</abbr></a>&nbsp; 
+										require
+					(<a href="#" rel="netteBsArgs1-7">arguments <abbr>&#x25ba;</abbr></a>)
+					</p>
+
+											<div class="nette-collapsed outer" id="netteBsArgs1-7">
+						<table>
+						<tr><th>#0</th><td><pre class="nette-dump"><span class="php-string">"H:\inetpub\nalada.sk\app\bootstrap.php"</span> (38)
+</pre></td></tr>
+						</table>
+						</div>
+					
+
+											<div class="nette-collapsed" id="netteBsSrc1-7"><pre><div><code><span style="color: #06B"><span style="color: #D24; font-weight: bold"><span class='line'> 6:</span>    </span><span style="color: #998; font-style: italic">//&nbsp;absolute&nbsp;filesystem&nbsp;path&nbsp;to&nbsp;the&nbsp;application&nbsp;root
+<span class='line'> 7:</span>    </span><span style="color: #000">define</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #080">'APP_DIR'</span><span style="color: #D24; font-weight: bold">,&nbsp;</span><span style="color: #000">WWW_DIR&nbsp;</span><span style="color: #D24; font-weight: bold">.&nbsp;</span><span style="color: #080">'/../app'</span><span style="color: #D24; font-weight: bold">);
+<span class='line'> 8:</span>    
+<span class='line'> 9:</span>    </span><span style="color: #998; font-style: italic">//&nbsp;absolute&nbsp;filesystem&nbsp;path&nbsp;to&nbsp;the&nbsp;libraries
+<span class='line'>10:</span>    </span><span style="color: #000">define</span><span style="color: #D24; font-weight: bold">(</span><span style="color: #080">'LIBS_DIR'</span><span style="color: #D24; font-weight: bold">,&nbsp;</span><span style="color: #000">WWW_DIR&nbsp;</span><span style="color: #D24; font-weight: bold">.&nbsp;</span><span style="color: #080">'/../libs'</span><span style="color: #D24; font-weight: bold">);
+<span class='line'>11:</span>    
+<span class='line'>12:</span>    </span><span style="color: #998; font-style: italic">//&nbsp;uncomment&nbsp;this&nbsp;line&nbsp;if&nbsp;you&nbsp;must&nbsp;temporarily&nbsp;take&nbsp;down&nbsp;your&nbsp;site&nbsp;for&nbsp;maintenance
+<span class='line'>13:</span>    //&nbsp;require&nbsp;APP_DIR&nbsp;.&nbsp;'/templates/maintenance.phtml';
+<span class='line'>14:</span>    
+<span class='line'>15:</span>    //&nbsp;load&nbsp;bootstrap&nbsp;file
+<span class='highlight'>16:    require&nbsp;APP_DIR&nbsp;.&nbsp;'/bootstrap.php';
+</span></span><span style="color: #D24; font-weight: bold"></span><span style="color: #000"></span><span style="color: #D24; font-weight: bold"></span><span style="color: #080"></span><span style="color: #D24; font-weight: bold"><span class='line'>17:</span>    </span>
+</span></code></div></pre></div>
+					
+					</li>
+									</ol>
+			</div></div>
+			
+
+
+			
+				
+
+
+						
+
+
+		<div class="panel">
+		<h2><a href="#" rel="netteBsPnl3">Environment <abbr>&#x25ba;</abbr></a></h2>
+
+		<div id="netteBsPnl3" class="nette-collapsed inner">
+			<h3><a href="#" rel="netteBsPnl4">$_SERVER <abbr>&#x25bc;</abbr></a></h3>
+			<div id="netteBsPnl4" class="outer">
+			<table>
+			<tr><th>ALLUSERSPROFILE</th><td><pre class="nette-dump"><span class="php-string">"C:\ProgramData"</span> (14)
+</pre></td></tr>
+<tr><th>APPDATA</th><td><pre class="nette-dump"><span class="php-string">"C:\Users\Martin\AppData\Roaming"</span> (31)
+</pre></td></tr>
+<tr><th>asl_log</th><td><pre class="nette-dump"><span class="php-string">"Destination=file"</span> (16)
+</pre></td></tr>
+<tr><th>CLASSPATH</th><td><pre class="nette-dump"><span class="php-string">".;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip"</span> (53)
+</pre></td></tr>
+<tr><th>CommonProgramFiles</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\Common Files"</span> (35)
+</pre></td></tr>
+<tr><th>CommonProgramFiles(x86)</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\Common Files"</span> (35)
+</pre></td></tr>
+<tr><th>CommonProgramW6432</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files\Common Files"</span> (29)
+</pre></td></tr>
+<tr><th>COMPUTERNAME</th><td><pre class="nette-dump"><span class="php-string">"MARTIN-PC"</span> (9)
+</pre></td></tr>
+<tr><th>ComSpec</th><td><pre class="nette-dump"><span class="php-string">"C:\Windows\system32\cmd.exe"</span> (27)
+</pre></td></tr>
+<tr><th>FP_NO_HOST_CHECK</th><td><pre class="nette-dump"><span class="php-string">"NO"</span> (2)
+</pre></td></tr>
+<tr><th>HOMEDRIVE</th><td><pre class="nette-dump"><span class="php-string">"C:"</span> (2)
+</pre></td></tr>
+<tr><th>HOMEPATH</th><td><pre class="nette-dump"><span class="php-string">"\Users\Martin"</span> (13)
+</pre></td></tr>
+<tr><th>LOCALAPPDATA</th><td><pre class="nette-dump"><span class="php-string">"C:\Users\Martin\AppData\Local"</span> (29)
+</pre></td></tr>
+<tr><th>LOGONSERVER</th><td><pre class="nette-dump"><span class="php-string">"\\MARTIN-PC"</span> (11)
+</pre></td></tr>
+<tr><th>NUMBER_OF_PROCESSORS</th><td><pre class="nette-dump"><span class="php-string">"2"</span>
+</pre></td></tr>
+<tr><th>OS</th><td><pre class="nette-dump"><span class="php-string">"Windows_NT"</span> (10)
+</pre></td></tr>
+<tr><th>Path</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP\;C:\Ruby193\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Common Files\Microsoft Shared\Windo ... "</span> (540)
+</pre></td></tr>
+<tr><th>PATHEXT</th><td><pre class="nette-dump"><span class="php-string">".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"</span> (53)
+</pre></td></tr>
+<tr><th>PHPRC</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP\"</span> (27)
+</pre></td></tr>
+<tr><th>PHP_PEAR_BIN_DIR</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP"</span> (26)
+</pre></td></tr>
+<tr><th>PHP_PEAR_DATA_DIR</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP\data"</span> (31)
+</pre></td></tr>
+<tr><th>PHP_PEAR_DOC_DIR</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP\docs"</span> (31)
+</pre></td></tr>
+<tr><th>PHP_PEAR_INSTALL_DIR</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP\pear"</span> (31)
+</pre></td></tr>
+<tr><th>PHP_PEAR_PHP_BIN</th><td><pre class="nette-dump"><span class="php-string">".\php.exe"</span> (9)
+</pre></td></tr>
+<tr><th>PHP_PEAR_SYSCONF_DIR</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP"</span> (26)
+</pre></td></tr>
+<tr><th>PHP_PEAR_TEST_DIR</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\PHP\tests"</span> (32)
+</pre></td></tr>
+<tr><th>PROCESSOR_ARCHITECTURE</th><td><pre class="nette-dump"><span class="php-string">"x86"</span> (3)
+</pre></td></tr>
+<tr><th>PROCESSOR_ARCHITEW6432</th><td><pre class="nette-dump"><span class="php-string">"AMD64"</span> (5)
+</pre></td></tr>
+<tr><th>PROCESSOR_IDENTIFIER</th><td><pre class="nette-dump"><span class="php-string">"Intel64 Family 6 Model 15 Stepping 11, GenuineIntel"</span> (51)
+</pre></td></tr>
+<tr><th>PROCESSOR_LEVEL</th><td><pre class="nette-dump"><span class="php-string">"6"</span>
+</pre></td></tr>
+<tr><th>PROCESSOR_REVISION</th><td><pre class="nette-dump"><span class="php-string">"0f0b"</span> (4)
+</pre></td></tr>
+<tr><th>ProgramData</th><td><pre class="nette-dump"><span class="php-string">"C:\ProgramData"</span> (14)
+</pre></td></tr>
+<tr><th>ProgramFiles</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)"</span> (22)
+</pre></td></tr>
+<tr><th>ProgramFiles(x86)</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)"</span> (22)
+</pre></td></tr>
+<tr><th>ProgramW6432</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files"</span> (16)
+</pre></td></tr>
+<tr><th>PROMPT</th><td><pre class="nette-dump"><span class="php-string">"$P$G"</span> (4)
+</pre></td></tr>
+<tr><th>PSModulePath</th><td><pre class="nette-dump"><span class="php-string">"C:\Windows\system32\WindowsPowerShell\v1.0\Modules\"</span> (51)
+</pre></td></tr>
+<tr><th>PUBLIC</th><td><pre class="nette-dump"><span class="php-string">"C:\Users\Public"</span> (15)
+</pre></td></tr>
+<tr><th>QTJAVA</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip"</span> (51)
+</pre></td></tr>
+<tr><th>SESSIONNAME</th><td><pre class="nette-dump"><span class="php-string">"Console"</span> (7)
+</pre></td></tr>
+<tr><th>SystemDrive</th><td><pre class="nette-dump"><span class="php-string">"C:"</span> (2)
+</pre></td></tr>
+<tr><th>SystemRoot</th><td><pre class="nette-dump"><span class="php-string">"C:\Windows"</span> (10)
+</pre></td></tr>
+<tr><th>TEMP</th><td><pre class="nette-dump"><span class="php-string">"C:\Users\Martin\AppData\Local\Temp"</span> (34)
+</pre></td></tr>
+<tr><th>TMP</th><td><pre class="nette-dump"><span class="php-string">"C:\Users\Martin\AppData\Local\Temp"</span> (34)
+</pre></td></tr>
+<tr><th>USERDOMAIN</th><td><pre class="nette-dump"><span class="php-string">"Martin-PC"</span> (9)
+</pre></td></tr>
+<tr><th>USERNAME</th><td><pre class="nette-dump"><span class="php-string">"Martin"</span> (6)
+</pre></td></tr>
+<tr><th>USERPROFILE</th><td><pre class="nette-dump"><span class="php-string">"C:\Users\Martin"</span> (15)
+</pre></td></tr>
+<tr><th>VBOX_INSTALL_PATH</th><td><pre class="nette-dump"><span class="php-string">"C:\Program Files\Oracle\VirtualBox\"</span> (35)
+</pre></td></tr>
+<tr><th>windir</th><td><pre class="nette-dump"><span class="php-string">"C:\Windows"</span> (10)
+</pre></td></tr>
+<tr><th>PHP_SELF</th><td><pre class="nette-dump"><span class="php-string">"index.php"</span> (9)
+</pre></td></tr>
+<tr><th>SCRIPT_NAME</th><td><pre class="nette-dump"><span class="php-string">"index.php"</span> (9)
+</pre></td></tr>
+<tr><th>SCRIPT_FILENAME</th><td><pre class="nette-dump"><span class="php-string">"index.php"</span> (9)
+</pre></td></tr>
+<tr><th>PATH_TRANSLATED</th><td><pre class="nette-dump"><span class="php-string">"index.php"</span> (9)
+</pre></td></tr>
+<tr><th>DOCUMENT_ROOT</th><td><pre class="nette-dump"><span class="php-string">""</span>
+</pre></td></tr>
+<tr><th>REQUEST_TIME</th><td><pre class="nette-dump"><span class="php-int">1329050231</span>
+</pre></td></tr>
+<tr><th>argv</th><td><pre class="nette-dump"><a href='#' rel='next'><span class="php-array">array</span>(4) <abbr>&#x25bc;</abbr> </a><code>[
+   <span class="php-key">0</span> => <span class="php-string">"index.php"</span> (9)
+   <span class="php-key">1</span> => <span class="php-string">"app:user:create"</span> (15)
+   <span class="php-key">2</span> => <span class="php-string">"martin"</span> (6)
+   <span class="php-key">3</span> => <span class="php-string">"martin"</span> (6)
+]</code>
+</pre></td></tr>
+<tr><th>argc</th><td><pre class="nette-dump"><span class="php-int">4</span>
+</pre></td></tr>
+			</table>
+			</div>
+
+
+			<h3><a href="#" rel="netteBsPnl5">$_SESSION <abbr>&#x25bc;</abbr></a></h3>
+			<div id="netteBsPnl5" class="outer">
+						<p><i>empty</i></p>
+						</div>
+
+
+			
+
+						<h3><a href="#" rel="netteBsPnl6">Constants <abbr>&#x25ba;</abbr></a></h3>
+			<div id="netteBsPnl6" class="outer nette-collapsed">
+			<table>
+			<tr><th>WWW_DIR</th><td><pre class="nette-dump"><span class="php-string">"H:\inetpub\nalada.sk\www"</span> (24)
+</pre></td></tr>
+<tr><th>APP_DIR</th><td><pre class="nette-dump"><span class="php-string">"H:\inetpub\nalada.sk\www/../app"</span> (31)
+</pre></td></tr>
+<tr><th>LIBS_DIR</th><td><pre class="nette-dump"><span class="php-string">"H:\inetpub\nalada.sk\www/../libs"</span> (32)
+</pre></td></tr>
+<tr><th>NETTE</th><td><pre class="nette-dump"><span class="php-bool">TRUE</span>
+</pre></td></tr>
+<tr><th>NETTE_DIR</th><td><pre class="nette-dump"><span class="php-string">"H:\inetpub\nalada.sk\libs\Nette"</span> (31)
+</pre></td></tr>
+<tr><th>NETTE_VERSION_ID</th><td><pre class="nette-dump"><span class="php-int">20000</span>
+</pre></td></tr>
+<tr><th>NETTE_PACKAGE</th><td><pre class="nette-dump"><span class="php-string">"5.3"</span> (3)
+</pre></td></tr>
+			</table>
+			</div>
+			
+
+			<h3><a href="#" rel="netteBsPnl7">Included files <abbr>&#x25ba;</abbr></a> (182)</h3>
+			<div id="netteBsPnl7" class="outer nette-collapsed">
+			<table>
+			<tr><td>H:\inetpub\nalada.sk\www\index.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\bootstrap.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\loader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\exceptions.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\Object.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\LimitedScope.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Loaders\AutoLoader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Loaders\NetteLoader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\Helpers.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\shortcuts.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Html.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\Debugger.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\Logger.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\FireLogger.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\BlueScreen.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\Bar.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\DefaultBarPanel.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\IBarPanel.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\SafeStream.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Configurator.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Loaders\RobotLoader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Caching\Storages\FileStorage.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Caching\IStorage.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Caching\Cache.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\Callback.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Strings.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Finder.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Iterators\RecursiveFilter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Iterators\Filter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\Framework.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Helpers.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Caching\Storages\PhpFileStorage.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Loader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Adapters\NeonAdapter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\IAdapter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Neon.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Tokenizer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Validators.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Compiler.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Extensions\PhpExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\CompilerExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Extensions\ConstantsExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Config\Extensions\NetteExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\ObjectMixin.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Reflection\ClassType.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Reflection\Property.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\extensions\DocumentManager.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\console\extensions\AppCommandsExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\console\extensions\DoctrineODMCommandsExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\console\extensions\ConsoleExtension.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\ContainerBuilder.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\Helpers.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\Arrays.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\ServiceDefinition.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\Statement.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\Container.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\FreezableObject.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\IFreezable.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\IContainer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Caching\Storages\FileJournal.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Caching\Storages\IJournal.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\RequestFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\Request.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\IRequest.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\Response.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\IResponse.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\Context.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\Session.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\UserStorage.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Security\IUserStorage.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Security\User.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Application\Application.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Application\PresenterFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Application\IPresenterFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Application\Routers\RouteList.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\ArrayList.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Application\IRouter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Mail\SendmailMailer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Mail\IMailer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Mail\Message.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Mail\MimePart.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Forms\Form.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Forms\Container.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\ComponentModel\Container.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\ComponentModel\Component.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\ComponentModel\IComponent.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\ComponentModel\IContainer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Latte\Engine.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Templating\FileTemplate.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Templating\Template.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Templating\ITemplate.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Templating\IFileTemplate.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\NestedAccessor.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\DocumentManager.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Persistence\ObjectManager.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\console\commands\CreateUser.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Command\Command.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\ClearCache\MetadataCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\Schema\CreateCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\Schema\AbstractCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\Schema\DropCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\GenerateDocumentsCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\GenerateHydratorsCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\GenerateProxiesCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\GenerateRepositoriesCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Command\QueryCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Application.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\PhpGenerator\ClassType.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\PhpGenerator\Method.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\PhpGenerator\Helpers.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\PhpGenerator\Property.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\DI\exceptions.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\PhpGenerator\PhpLiteral.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Reflection\Method.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Reflection\Parameter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Application\Diagnostics\RoutingPanel.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Helper\HelperSet.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Utils\PhpGenerator\Parameter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\temp\cache\_Nette.Configurator\_-c55b1556743ece83866954120bee66cd.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\UrlScript.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Http\Url.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\common\Environment.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Helper\FormatterHelper.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Helper\Helper.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Helper\HelperInterface.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Helper\DialogHelper.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Input\InputDefinition.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Input\InputArgument.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Input\InputOption.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Command\HelpCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Command\ListCommand.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Tools\Console\Helper\DocumentManagerHelper.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Configuration.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\MongoDB\Configuration.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Cache\ArrayCache.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Cache\CacheProvider.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Cache\Cache.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\AnnotationRegistry.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Mapping\Annotations\DoctrineAnnotations.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\Annotation.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\AnnotationReader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\Reader.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\Annotation\IgnoreAnnotation.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\DocParser.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\DocLexer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Lexer.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\Annotation\Target.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\PhpParser.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Mapping\Driver\Driver.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\MongoDB\Connection.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\EventManager.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Mapping\ClassMetadataFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Persistence\Mapping\ClassMetadataFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Hydrator\HydratorFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\UnitOfWork.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\PropertyChangedListener.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\SchemaManager.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Proxy\ProxyFactory.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Input\ArgvInput.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Input\Input.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Input\InputInterface.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Output\ConsoleOutput.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Output\StreamOutput.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Output\Output.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Output\OutputInterface.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Output\ConsoleOutputInterface.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Formatter\OutputFormatter.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Formatter\OutputFormatterInterface.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Formatter\OutputFormatterStyle.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Symfony\Console\Formatter\OutputFormatterStyleInterface.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\services\PasswordHasher.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\app\models\documents\User.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Mapping\ClassMetadata.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Mapping\ClassMetadataInfo.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Persistence\Mapping\ClassMetadata.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\Annotation\Attribute.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\Common\Annotations\Annotation\Attributes.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Id\AutoGenerator.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Id\AbstractIdGenerator.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Doctrine\ODM\MongoDB\Events.php</td></tr>
+<tr><td>H:\inetpub\nalada.sk\libs\Nette\Diagnostics\templates\bluescreen.phtml</td></tr>
+			</table>
+			</div>
+
+
+			<h3><a href="#" rel="netteBsPnl8">Configuration options <abbr>&#x25ba;</abbr></a></h3>
+			<div id="netteBsPnl8" class="outer nette-collapsed">
+			phpinfo()
+
+
+ _______________________________________________________________________
+
+
+Configuration
+
+bcmath
+
+BCMath support => enabled
+
+Directive => Local Value => Master Value
+bcmath.scale => 0 => 0
+
+bz2
+
+BZip2 Support => Enabled
+Stream Wrapper support => compress.bzip2://
+Stream Filter support => bzip2.decompress, bzip2.compress
+BZip2 Version => 1.0.6, 6-Sept-2010
+
+calendar
+
+Calendar support => enabled
+
+com_dotnet
+
+COM support => enabled
+DCOM support => disabled
+.Net support => enabled
+
+Directive => Local Value => Master Value
+com.allow_dcom => 0 => 0
+com.autoregister_casesensitive => 1 => 1
+com.autoregister_typelib => 0 => 0
+com.autoregister_verbose => 0 => 0
+com.code_page => no value => no value
+com.typelib_file => no value => no value
+
+Core
+
+PHP Version => 5.3.10
+
+Directive => Local Value => Master Value
+allow_call_time_pass_reference => Off => Off
+allow_url_fopen => On => On
+allow_url_include => Off => Off
+always_populate_raw_post_data => Off => Off
+arg_separator.input => & => &
+arg_separator.output => & => &
+asp_tags => Off => Off
+auto_append_file => no value => no value
+auto_globals_jit => On => On
+auto_prepend_file => no value => no value
+browscap => no value => no value
+default_charset => no value => no value
+default_mimetype => text/html => text/html
+define_syslog_variables => Off => Off
+disable_classes => no value => no value
+disable_functions => no value => no value
+display_errors => Off => STDOUT
+display_startup_errors => Off => Off
+doc_root => no value => no value
+docref_ext => no value => no value
+docref_root => no value => no value
+enable_dl => Off => Off
+error_append_string => no value => no value
+error_log => H:\inetpub\nalada.sk\log/php_error.log => C:\Windows\temp\php-errors.log
+error_prepend_string => no value => no value
+error_reporting => 0 => 22527
+exit_on_timeout => Off => Off
+expose_php => On => On
+extension_dir => C:\Program Files (x86)\PHP\ext => C:\Program Files (x86)\PHP\ext
+file_uploads => On => On
+highlight.bg => <font style="color: #FFFFFF">#FFFFFF</font> => <font style="color: #FFFFFF">#FFFFFF</font>
+highlight.comment => <font style="color: #998; font-style: italic">#998; font-style: italic</font> => <font style="color: #FF8000">#FF8000</font>
+highlight.default => <font style="color: #000">#000</font> => <font style="color: #0000BB">#0000BB</font>
+highlight.html => <font style="color: #06B">#06B</font> => <font style="color: #000000">#000000</font>
+highlight.keyword => <font style="color: #D24; font-weight: bold">#D24; font-weight: bold</font> => <font style="color: #007700">#007700</font>
+highlight.string => <font style="color: #080">#080</font> => <font style="color: #DD0000">#DD0000</font>
+html_errors => Off => Off
+ignore_repeated_errors => Off => Off
+ignore_repeated_source => Off => Off
+ignore_user_abort => Off => Off
+implicit_flush => On => On
+include_path => .;C:\Program Files (x86)\PHP\pear => .;C:\Program Files (x86)\PHP\pear
+log_errors => Off => On
+log_errors_max_len => 1024 => 1024
+magic_quotes_gpc => Off => Off
+magic_quotes_runtime => Off => Off
+magic_quotes_sybase => Off => Off
+mail.add_x_header => On => On
+mail.force_extra_parameters => no value => no value
+mail.log => no value => no value
+max_execution_time => 0 => 0
+max_file_uploads => 20 => 20
+max_input_nesting_level => 64 => 64
+max_input_time => -1 => -1
+max_input_vars => 1000 => 1000
+memory_limit => 512M => 512M
+open_basedir => no value => no value
+output_buffering => 0 => 0
+output_handler => no value => no value
+post_max_size => 8M => 8M
+precision => 14 => 14
+realpath_cache_size => 16K => 16K
+realpath_cache_ttl => 120 => 120
+register_argc_argv => On => On
+register_globals => Off => Off
+register_long_arrays => Off => Off
+report_memleaks => On => On
+report_zend_debug => Off => Off
+request_order => GP => GP
+safe_mode => Off => Off
+safe_mode_exec_dir => no value => no value
+safe_mode_gid => Off => Off
+safe_mode_include_dir => no value => no value
+sendmail_from => no value => no value
+sendmail_path => no value => no value
+serialize_precision => 17 => 17
+short_open_tag => Off => Off
+SMTP => localhost => localhost
+smtp_port => 25 => 25
+sql.safe_mode => Off => Off
+track_errors => Off => Off
+unserialize_callback_func => no value => no value
+upload_max_filesize => 2M => 2M
+upload_tmp_dir => C:\Windows\Temp => C:\Windows\Temp
+user_dir => no value => no value
+user_ini.cache_ttl => 300 => 300
+user_ini.filename => .user.ini => .user.ini
+variables_order => GPCS => GPCS
+windows.show_crt_warning => Off => Off
+xmlrpc_error_number => 0 => 0
+xmlrpc_errors => Off => Off
+y2k_compliance => On => On
+zend.enable_gc => On => On
+
+ctype
+
+ctype functions => enabled
+
+curl
+
+cURL support => enabled
+cURL Information => 7.24.0
+Age => 3
+Features
+AsynchDNS => Yes
+Debug => No
+GSS-Negotiate => No
+IDN => No
+IPv6 => Yes
+Largefile => Yes
+NTLM => Yes
+SPNEGO => No
+SSL => Yes
+SSPI => No
+krb4 => No
+libz => Yes
+CharConv => No
+Protocols => dict, file, ftp, ftps, gopher, http, https, imap, imaps, ldap, pop3, pop3s, rtsp, scp, sftp, smtp, smtps, telnet, tftp
+Host => i386-pc-win32
+SSL Version => OpenSSL/0.9.8t
+ZLib Version => 1.2.5
+libSSH Version => libssh2/1.3.0
+
+date
+
+date/time support => enabled
+"Olson" Timezone Database Version => 2011.14
+Timezone Database => internal
+Default timezone => Europe/Bratislava
+
+Directive => Local Value => Master Value
+date.default_latitude => 31.7667 => 31.7667
+date.default_longitude => 35.2333 => 35.2333
+date.sunrise_zenith => 90.583333 => 90.583333
+date.sunset_zenith => 90.583333 => 90.583333
+date.timezone => Europe/Bratislava => Europe/Bratislava
+
+dom
+
+DOM/XML => enabled
+DOM/XML API Version => 20031129
+libxml Version => 2.7.7
+HTML Support => enabled
+XPath Support => enabled
+XPointer Support => enabled
+Schema Support => enabled
+RelaxNG Support => enabled
+
+enchant
+
+enchant support => enabled
+Version => 1.1.0
+Libenchant Version => 1.5.0 or later
+Revision => $Revision: 321634 $
+
+ispell => Ispell Provider => C:\Program Files (x86)\PHP\libenchant_ispell.dll
+myspell => Myspell Provider => C:\Program Files (x86)\PHP\libenchant_myspell.dll
+
+ereg
+
+Regex Library => Bundled library enabled
+
+fileinfo
+
+fileinfo support => enabled
+version => 1.0.5-dev
+
+filter
+
+Input Validation and Filtering => enabled
+Revision => $Revision: 321634 $
+
+Directive => Local Value => Master Value
+filter.default => unsafe_raw => unsafe_raw
+filter.default_flags => no value => no value
+
+ftp
+
+FTP support => enabled
+
+gd
+
+GD Support => enabled
+GD Version => bundled (2.0.34 compatible)
+FreeType Support => enabled
+FreeType Linkage => with freetype
+FreeType Version => 2.4.3
+GIF Read Support => enabled
+GIF Create Support => enabled
+JPEG Support => enabled
+libJPEG Version => 6b
+PNG Support => enabled
+libPNG Version => 1.2.46
+WBMP Support => enabled
+XBM Support => enabled
+
+Directive => Local Value => Master Value
+gd.jpeg_ignore_warning => 0 => 0
+
+gettext
+
+GetText Support => enabled
+
+gmp
+
+gmp support => enabled
+MPIR version => 1.3.1
+
+hash
+
+hash support => enabled
+Hashing Engines => md2 md4 md5 sha1 sha224 sha256 sha384 sha512 ripemd128 ripemd160 ripemd256 ripemd320 whirlpool tiger128,3 tiger160,3 tiger192,3 tiger128,4 tiger160,4 tiger192,4 snefru snefru256 gost adler32 crc32 crc32b salsa10 salsa20 haval128,3 haval160,3 haval192,3 haval224,3 haval256,3 haval128,4 haval160,4 haval192,4 haval224,4 haval256,4 haval128,5 haval160,5 haval192,5 haval224,5 haval256,5 
+
+iconv
+
+iconv support => enabled
+iconv implementation => "libiconv"
+iconv library version => 1.11
+
+Directive => Local Value => Master Value
+iconv.input_encoding => ISO-8859-1 => ISO-8859-1
+iconv.internal_encoding => UTF-8 => ISO-8859-1
+iconv.output_encoding => ISO-8859-1 => ISO-8859-1
+
+imap
+
+IMAP c-Client Version => 2007e
+SSL Support => enabled
+
+intl
+
+Internationalization support => enabled
+version => 1.1.0
+ICU version => 4.6.1
+ICU Data version => 4.6
+
+Directive => Local Value => Master Value
+intl.default_locale => no value => no value
+intl.error_level => 0 => 0
+
+json
+
+json support => enabled
+json version => 1.2.1
+
+ldap
+
+LDAP Support => enabled
+RCS Version => $Id: ldap.c 321634 2012-01-01 13:15:04Z felipe $
+Total Links => 0/unlimited
+API Version => 3001
+Vendor Name => OpenLDAP
+Vendor Version => 20319
+SASL Support => Enabled
+
+Directive => Local Value => Master Value
+ldap.max_links => Unlimited => Unlimited
+
+libxml
+
+libXML support => active
+libXML Compiled Version => 2.7.7
+libXML Loaded Version => 20707
+libXML streams => enabled
+
+mbstring
+
+Multibyte Support => enabled
+Multibyte string engine => libmbfl
+HTTP input encoding translation => disabled
+
+mbstring extension makes use of "streamable kanji code filter and converter", which is distributed under the GNU Lesser General Public License version 2.1.
+
+Multibyte (japanese) regex support => enabled
+Multibyte regex (oniguruma) version => 4.7.1
+
+Directive => Local Value => Master Value
+mbstring.detect_order => no value => no value
+mbstring.encoding_translation => Off => Off
+mbstring.func_overload => 0 => 0
+mbstring.http_input => pass => pass
+mbstring.http_output => pass => pass
+mbstring.http_output_conv_mimetypes => ^(text/|application/xhtml\+xml) => ^(text/|application/xhtml\+xml)
+mbstring.internal_encoding => no value => no value
+mbstring.language => neutral => neutral
+mbstring.strict_detection => Off => Off
+mbstring.substitute_character => no value => no value
+
+mcrypt
+
+mcrypt support => enabled
+mcrypt_filter support => enabled
+Version => 2.5.8
+Api No => 20021217
+Supported ciphers => cast-128 gost rijndael-128 twofish cast-256 loki97 rijndael-192 saferplus wake blowfish-compat des rijndael-256 serpent xtea blowfish enigma rc2 tripledes arcfour 
+Supported modes => cbc cfb ctr ecb ncfb nofb ofb stream 
+
+Directive => Local Value => Master Value
+mcrypt.algorithms_dir => no value => no value
+mcrypt.modes_dir => no value => no value
+
+mhash
+
+MHASH support => Enabled
+MHASH API Version => Emulated Support
+
+mongo
+
+MongoDB Support => enabled
+Version => 1.1.4
+
+Directive => Local Value => Master Value
+mongo.allow_empty_keys => 0 => 0
+mongo.allow_persistent => 1 => 1
+mongo.auto_reconnect => 1 => 1
+mongo.chunk_size => 262144 => 262144
+mongo.cmd => $ => $
+mongo.default_host => localhost => localhost
+mongo.default_port => 27017 => 27017
+mongo.long_as_object => 0 => 0
+mongo.native_long => 0 => 0
+mongo.no_id => 0 => 0
+mongo.utf8 => 1 => 1
+
+mysql
+
+MySQL Support => enabled
+Active Persistent Links => 0
+Active Links => 0
+Client API version => mysqlnd 5.0.8-dev - 20102224 - $Revision: 321634 $
+
+Directive => Local Value => Master Value
+mysql.allow_local_infile => On => On
+mysql.allow_persistent => On => On
+mysql.connect_timeout => 60 => 60
+mysql.default_host => no value => no value
+mysql.default_password => no value => no value
+mysql.default_port => no value => no value
+mysql.default_socket => no value => no value
+mysql.default_user => no value => no value
+mysql.max_links => Unlimited => Unlimited
+mysql.max_persistent => Unlimited => Unlimited
+mysql.trace_mode => Off => Off
+
+mysqli
+
+MysqlI Support => enabled
+Client API library version => mysqlnd 5.0.8-dev - 20102224 - $Revision: 321634 $
+Active Persistent Links => 0
+Inactive Persistent Links => 0
+Active Links => 0
+
+Directive => Local Value => Master Value
+mysqli.allow_local_infile => On => On
+mysqli.allow_persistent => On => On
+mysqli.default_host => no value => no value
+mysqli.default_port => 3306 => 3306
+mysqli.default_pw => no value => no value
+mysqli.default_socket => no value => no value
+mysqli.default_user => no value => no value
+mysqli.max_links => Unlimited => Unlimited
+mysqli.max_persistent => Unlimited => Unlimited
+mysqli.reconnect => Off => Off
+
+mysqlnd
+
+mysqlnd => enabled
+Version => mysqlnd 5.0.8-dev - 20102224 - $Revision: 321634 $
+Compression => supported
+SSL => supported
+Command buffer size => 4096
+Read buffer size => 32768
+Read timeout => 31536000
+Collecting statistics => Yes
+Collecting memory statistics => No
+Tracing => n/a
+
+Client statistics =>  
+bytes_sent => 0
+bytes_received => 0
+packets_sent => 0
+packets_received => 0
+protocol_overhead_in => 0
+protocol_overhead_out => 0
+bytes_received_ok_packet => 0
+bytes_received_eof_packet => 0
+bytes_received_rset_header_packet => 0
+bytes_received_rset_field_meta_packet => 0
+bytes_received_rset_row_packet => 0
+bytes_received_prepare_response_packet => 0
+bytes_received_change_user_packet => 0
+packets_sent_command => 0
+packets_received_ok => 0
+packets_received_eof => 0
+packets_received_rset_header => 0
+packets_received_rset_field_meta => 0
+packets_received_rset_row => 0
+packets_received_prepare_response => 0
+packets_received_change_user => 0
+result_set_queries => 0
+non_result_set_queries => 0
+no_index_used => 0
+bad_index_used => 0
+slow_queries => 0
+buffered_sets => 0
+unbuffered_sets => 0
+ps_buffered_sets => 0
+ps_unbuffered_sets => 0
+flushed_normal_sets => 0
+flushed_ps_sets => 0
+ps_prepared_never_executed => 0
+ps_prepared_once_executed => 0
+rows_fetched_from_server_normal => 0
+rows_fetched_from_server_ps => 0
+rows_buffered_from_client_normal => 0
+rows_buffered_from_client_ps => 0
+rows_fetched_from_client_normal_buffered => 0
+rows_fetched_from_client_normal_unbuffered => 0
+rows_fetched_from_client_ps_buffered => 0
+rows_fetched_from_client_ps_unbuffered => 0
+rows_fetched_from_client_ps_cursor => 0
+rows_affected_normal => 0
+rows_affected_ps => 0
+rows_skipped_normal => 0
+rows_skipped_ps => 0
+copy_on_write_saved => 0
+copy_on_write_performed => 0
+command_buffer_too_small => 0
+connect_success => 0
+connect_failure => 0
+connection_reused => 0
+reconnect => 0
+pconnect_success => 0
+active_connections => 0
+active_persistent_connections => 0
+explicit_close => 0
+implicit_close => 0
+disconnect_close => 0
+in_middle_of_command_close => 0
+explicit_free_result => 0
+implicit_free_result => 0
+explicit_stmt_close => 0
+implicit_stmt_close => 0
+mem_emalloc_count => 0
+mem_emalloc_amount => 0
+mem_ecalloc_count => 0
+mem_ecalloc_amount => 0
+mem_erealloc_count => 0
+mem_erealloc_amount => 0
+mem_efree_count => 0
+mem_efree_amount => 0
+mem_malloc_count => 0
+mem_malloc_amount => 0
+mem_calloc_count => 0
+mem_calloc_amount => 0
+mem_realloc_count => 0
+mem_realloc_amount => 0
+mem_free_count => 0
+mem_free_amount => 0
+mem_estrndup_count => 0
+mem_strndup_count => 0
+mem_estndup_count => 0
+mem_strdup_count => 0
+proto_text_fetched_null => 0
+proto_text_fetched_bit => 0
+proto_text_fetched_tinyint => 0
+proto_text_fetched_short => 0
+proto_text_fetched_int24 => 0
+proto_text_fetched_int => 0
+proto_text_fetched_bigint => 0
+proto_text_fetched_decimal => 0
+proto_text_fetched_float => 0
+proto_text_fetched_double => 0
+proto_text_fetched_date => 0
+proto_text_fetched_year => 0
+proto_text_fetched_time => 0
+proto_text_fetched_datetime => 0
+proto_text_fetched_timestamp => 0
+proto_text_fetched_string => 0
+proto_text_fetched_blob => 0
+proto_text_fetched_enum => 0
+proto_text_fetched_set => 0
+proto_text_fetched_geometry => 0
+proto_text_fetched_other => 0
+proto_binary_fetched_null => 0
+proto_binary_fetched_bit => 0
+proto_binary_fetched_tinyint => 0
+proto_binary_fetched_short => 0
+proto_binary_fetched_int24 => 0
+proto_binary_fetched_int => 0
+proto_binary_fetched_bigint => 0
+proto_binary_fetched_decimal => 0
+proto_binary_fetched_float => 0
+proto_binary_fetched_double => 0
+proto_binary_fetched_date => 0
+proto_binary_fetched_year => 0
+proto_binary_fetched_time => 0
+proto_binary_fetched_datetime => 0
+proto_binary_fetched_timestamp => 0
+proto_binary_fetched_string => 0
+proto_binary_fetched_blob => 0
+proto_binary_fetched_enum => 0
+proto_binary_fetched_set => 0
+proto_binary_fetched_geometry => 0
+proto_binary_fetched_other => 0
+init_command_executed_count => 0
+init_command_failed_count => 0
+com_quit => 0
+com_init_db => 0
+com_query => 0
+com_field_list => 0
+com_create_db => 0
+com_drop_db => 0
+com_refresh => 0
+com_shutdown => 0
+com_statistics => 0
+com_process_info => 0
+com_connect => 0
+com_process_kill => 0
+com_debug => 0
+com_ping => 0
+com_time => 0
+com_delayed_insert => 0
+com_change_user => 0
+com_binlog_dump => 0
+com_table_dump => 0
+com_connect_out => 0
+com_register_slave => 0
+com_stmt_prepare => 0
+com_stmt_execute => 0
+com_stmt_send_long_data => 0
+com_stmt_close => 0
+com_stmt_reset => 0
+com_stmt_set_option => 0
+com_stmt_fetch => 0
+com_deamon => 0
+bytes_received_real_data_normal => 0
+bytes_received_real_data_ps => 0
+
+odbc
+
+ODBC Support => enabled
+Active Persistent Links => 0
+Active Links => 0
+ODBC library => Win32
+
+Directive => Local Value => Master Value
+odbc.allow_persistent => On => On
+odbc.check_persistent => On => On
+odbc.default_cursortype => Static cursor => Static cursor
+odbc.default_db => no value => no value
+odbc.default_pw => no value => no value
+odbc.default_user => no value => no value
+odbc.defaultbinmode => return as is => return as is
+odbc.defaultlrl => return up to 4096 bytes => return up to 4096 bytes
+odbc.max_links => Unlimited => Unlimited
+odbc.max_persistent => Unlimited => Unlimited
+
+openssl
+
+OpenSSL support => enabled
+OpenSSL Library Version => OpenSSL 0.9.8t 18 Jan 2012
+OpenSSL Header Version => OpenSSL 0.9.8t 18 Jan 2012
+
+pcre
+
+PCRE (Perl Compatible Regular Expressions) Support => enabled
+PCRE Library Version => 8.12 2011-01-15
+
+Directive => Local Value => Master Value
+pcre.backtrack_limit => 1000000 => 1000000
+pcre.recursion_limit => 100000 => 100000
+
+PDO
+
+PDO support => enabled
+PDO drivers => mysql, odbc, pgsql, sqlite, sqlite2
+
+pdo_mysql
+
+PDO Driver for MySQL => enabled
+Client API version => mysqlnd 5.0.8-dev - 20102224 - $Revision: 321634 $
+
+PDO_ODBC
+
+PDO Driver for ODBC (Win32) => enabled
+ODBC Connection Pooling => Enabled, strict matching
+
+pdo_pgsql
+
+PDO Driver for PostgreSQL => enabled
+PostgreSQL(libpq) Version => 8.3.6
+Module version => 1.0.2
+Revision =>  $Id: pdo_pgsql.c 321634 2012-01-01 13:15:04Z felipe $ 
+
+pdo_sqlite
+
+PDO Driver for SQLite 3.x => enabled
+SQLite Library => 3.7.7.1
+
+pgsql
+
+PostgreSQL Support => enabled
+PostgreSQL(libpq) Version => 8.3.6
+Multibyte character support => enabled
+SSL support => disabled
+Active Persistent Links => 0
+Active Links => 0
+
+Directive => Local Value => Master Value
+pgsql.allow_persistent => On => On
+pgsql.auto_reset_persistent => Off => Off
+pgsql.ignore_notice => Off => Off
+pgsql.log_notice => Off => Off
+pgsql.max_links => Unlimited => Unlimited
+pgsql.max_persistent => Unlimited => Unlimited
+
+Phar
+
+Phar: PHP Archive support => enabled
+Phar EXT version => 2.0.1
+Phar API version => 1.1.1
+SVN revision => $Revision: 321634 $
+Phar-based phar archives => enabled
+Tar-based phar archives => enabled
+ZIP-based phar archives => enabled
+gzip compression => enabled
+bzip2 compression => enabled
+OpenSSL support => enabled
+
+
+Phar based on pear/PHP_Archive, original concept by Davey Shafik.
+Phar fully realized by Gregory Beaver and Marcus Boerger.
+Portions of tar implementation Copyright (c) 2003-2009 Tim Kientzle.
+Directive => Local Value => Master Value
+phar.cache_list => no value => no value
+phar.readonly => On => On
+phar.require_hash => On => On
+
+Reflection
+
+Reflection => enabled
+Version => $Revision: 321634 $
+
+session
+
+Session Support => enabled
+Registered save handlers => files user sqlite 
+Registered serializer handlers => php php_binary wddx 
+
+Directive => Local Value => Master Value
+session.auto_start => Off => Off
+session.bug_compat_42 => Off => Off
+session.bug_compat_warn => Off => Off
+session.cache_expire => 180 => 180
+session.cache_limiter => nocache => nocache
+session.cookie_domain => no value => no value
+session.cookie_httponly => Off => Off
+session.cookie_lifetime => 0 => 0
+session.cookie_path => / => /
+session.cookie_secure => Off => Off
+session.entropy_file => no value => no value
+session.entropy_length => 0 => 0
+session.gc_divisor => 1000 => 1000
+session.gc_maxlifetime => 1440 => 1440
+session.gc_probability => 1 => 1
+session.hash_bits_per_character => 5 => 5
+session.hash_function => 0 => 0
+session.name => PHPSESSID => PHPSESSID
+session.referer_check => no value => no value
+session.save_handler => files => files
+session.save_path => C:\Windows\Temp => C:\Windows\Temp
+session.serialize_handler => php => php
+session.use_cookies => On => On
+session.use_only_cookies => On => On
+session.use_trans_sid => 0 => 0
+
+shmop
+
+shmop support => enabled
+
+SimpleXML
+
+Simplexml support => enabled
+Revision => $Revision: 321634 $
+Schema support => enabled
+
+soap
+
+Soap Client => enabled
+Soap Server => enabled
+
+Directive => Local Value => Master Value
+soap.wsdl_cache => 1 => 1
+soap.wsdl_cache_dir => /tmp => /tmp
+soap.wsdl_cache_enabled => 1 => 1
+soap.wsdl_cache_limit => 5 => 5
+soap.wsdl_cache_ttl => 86400 => 86400
+
+sockets
+
+Sockets Support => enabled
+
+SPL
+
+SPL support => enabled
+Interfaces => Countable, OuterIterator, RecursiveIterator, SeekableIterator, SplObserver, SplSubject
+Classes => AppendIterator, ArrayIterator, ArrayObject, BadFunctionCallException, BadMethodCallException, CachingIterator, DirectoryIterator, DomainException, EmptyIterator, FilesystemIterator, FilterIterator, GlobIterator, InfiniteIterator, InvalidArgumentException, IteratorIterator, LengthException, LimitIterator, LogicException, MultipleIterator, NoRewindIterator, OutOfBoundsException, OutOfRangeException, OverflowException, ParentIterator, RangeException, RecursiveArrayIterator, RecursiveCachingIterator, RecursiveDirectoryIterator, RecursiveFilterIterator, RecursiveIteratorIterator, RecursiveRegexIterator, RecursiveTreeIterator, RegexIterator, RuntimeException, SplDoublyLinkedList, SplFileInfo, SplFileObject, SplFixedArray, SplHeap, SplMinHeap, SplMaxHeap, SplObjectStorage, SplPriorityQueue, SplQueue, SplStack, SplTempFileObject, UnderflowException, UnexpectedValueException
+
+SQLite
+
+SQLite support => enabled
+PECL Module version => 2.0-dev $Id: sqlite.c 321634 2012-01-01 13:15:04Z felipe $
+SQLite Library => 2.8.17
+SQLite Encoding => iso8859
+
+Directive => Local Value => Master Value
+sqlite.assoc_case => 0 => 0
+
+sqlite3
+
+SQLite3 support => enabled
+SQLite3 module version => 0.7-dev
+SQLite Library => 3.7.7.1
+
+Directive => Local Value => Master Value
+sqlite3.extension_dir => no value => no value
+
+standard
+
+Dynamic Library Support => enabled
+Internal Sendmail Support for Windows => enabled
+
+Directive => Local Value => Master Value
+assert.active => 1 => 1
+assert.bail => 0 => 0
+assert.callback => no value => no value
+assert.quiet_eval => 0 => 0
+assert.warning => 1 => 1
+auto_detect_line_endings => no value => no value
+default_socket_timeout => 60 => 60
+from => no value => no value
+safe_mode_allowed_env_vars => PHP_ => PHP_
+safe_mode_protected_env_vars => LD_LIBRARY_PATH => LD_LIBRARY_PATH
+url_rewriter.tags => a=href,area=href,frame=src,input=src,form=fakeentry => a=href,area=href,frame=src,input=src,form=fakeentry
+user_agent => no value => no value
+
+tidy
+
+Tidy support => enabled
+libTidy Release => 25 March 2009
+Extension Version => 2.0 ($Id: tidy.c 321634 2012-01-01 13:15:04Z felipe $)
+
+Directive => Local Value => Master Value
+tidy.clean_output => no value => no value
+tidy.default_config => no value => no value
+
+tokenizer
+
+Tokenizer Support => enabled
+
+wddx
+
+WDDX Support => enabled
+WDDX Session Serializer => enabled
+
+xdebug
+
+xdebug support => enabled
+Version => 2.1.2
+
+Supported protocols => Revision
+DBGp - Common DeBuGger Protocol => $Revision: 1.145 $
+
+Directive => Local Value => Master Value
+xdebug.auto_trace => Off => Off
+xdebug.collect_assignments => Off => Off
+xdebug.collect_includes => On => On
+xdebug.collect_params => 0 => 0
+xdebug.collect_return => Off => Off
+xdebug.collect_vars => Off => Off
+xdebug.default_enable => On => On
+xdebug.dump.COOKIE => no value => no value
+xdebug.dump.ENV => no value => no value
+xdebug.dump.FILES => no value => no value
+xdebug.dump.GET => no value => no value
+xdebug.dump.POST => no value => no value
+xdebug.dump.REQUEST => no value => no value
+xdebug.dump.SERVER => no value => no value
+xdebug.dump.SESSION => no value => no value
+xdebug.dump_globals => On => On
+xdebug.dump_once => On => On
+xdebug.dump_undefined => Off => Off
+xdebug.extended_info => On => On
+xdebug.file_link_format => no value => no value
+xdebug.idekey => Martin => no value
+xdebug.manual_url => http://www.php.net => http://www.php.net
+xdebug.max_nesting_level => 100 => 100
+xdebug.overload_var_dump => On => On
+xdebug.profiler_aggregate => Off => Off
+xdebug.profiler_append => Off => Off
+xdebug.profiler_enable => Off => Off
+xdebug.profiler_enable_trigger => Off => Off
+xdebug.profiler_output_dir => C:\xdebug => C:\xdebug
+xdebug.profiler_output_name => cachegrind.out.%p => cachegrind.out.%p
+xdebug.remote_autostart => Off => Off
+xdebug.remote_connect_back => Off => Off
+xdebug.remote_cookie_expire_time => 3600 => 3600
+xdebug.remote_enable => On => On
+xdebug.remote_handler => dbgp => dbgp
+xdebug.remote_host => localhost => localhost
+xdebug.remote_log => no value => no value
+xdebug.remote_mode => req => req
+xdebug.remote_port => 9000 => 9000
+xdebug.scream => Off => Off
+xdebug.show_exception_trace => Off => Off
+xdebug.show_local_vars => Off => Off
+xdebug.show_mem_delta => Off => Off
+xdebug.trace_format => 0 => 0
+xdebug.trace_options => 0 => 0
+xdebug.trace_output_dir => \ => \
+xdebug.trace_output_name => trace.%c => trace.%c
+xdebug.var_display_max_children => 128 => 128
+xdebug.var_display_max_data => 512 => 512
+xdebug.var_display_max_depth => 3 => 3
+
+xml
+
+XML Support => active
+XML Namespace Support => active
+libxml2 Version => 2.7.7
+
+xmlreader
+
+XMLReader => enabled
+
+xmlrpc
+
+core library version => xmlrpc-epi v. 0.51
+php extension version => 0.51
+author => Dan Libby
+homepage => http://xmlrpc-epi.sourceforge.net
+open sourced by => Epinions.com
+
+xmlwriter
+
+XMLWriter => enabled
+
+xsl
+
+XSL => enabled
+libxslt Version => 1.1.23
+libxslt compiled against libxml Version => 2.6.32
+EXSLT => enabled
+libexslt Version => 0.8.13
+
+zip
+
+Zip => enabled
+Extension Version => $Id: php_zip.c 321634 2012-01-01 13:15:04Z felipe $
+Zip version => 1.9.1
+Libzip version => 0.9.0
+
+zlib
+
+ZLib Support => enabled
+Stream Wrapper support => compress.zlib://
+Stream Filter support => zlib.inflate, zlib.deflate
+Compiled Version => 1.2.5
+Linked Version => 1.2.5
+
+Directive => Local Value => Master Value
+zlib.output_compression => Off => Off
+zlib.output_compression_level => -1 => -1
+zlib.output_handler => no value => no value
+
+Additional Modules
+
+Module Name
+			</div>
+		</div></div>
+
+
+
+		<div class="panel">
+		<h2><a href="#" rel="netteBsPnl9">HTTP request <abbr>&#x25ba;</abbr></a></h2>
+
+		<div id="netteBsPnl9" class="nette-collapsed inner">
+			
+
+						<h3>$_GET</h3>
+						<p><i>empty</i></p>
+									<h3>$_POST</h3>
+						<p><i>empty</i></p>
+									<h3>$_COOKIE</h3>
+						<p><i>empty</i></p>
+								</div></div>
+
+
+
+		<div class="panel">
+		<h2><a href="#" rel="netteBsPnl10">HTTP response <abbr>&#x25ba;</abbr></a></h2>
+
+		<div id="netteBsPnl10" class="nette-collapsed inner">
+			<h3>Headers</h3>
+						<p><i>no headers</i></p>
+					</div></div>
+
+
+
+		
+
+
+		<ul>
+			<li>Report generated at 2012/02/12 13:37:11</li>
+							<li>cli: index.php app:user:create martin martin</li>
+						<li>PHP 5.3.10</li>
+						<li>Nette Framework 2.0 <i>(revision 4626266 released on 2012-02-09)</i></li>		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">/*<![CDATA[*/var bs=document.getElementById("netteBluescreen");document.body.appendChild(bs);document.onkeyup=function(b){b=b||window.event;if(27==b.keyCode&&!b.shiftKey&&!b.altKey&&!b.ctrlKey&&!b.metaKey)bs.onclick({target:document.getElementById("netteBluescreenIcon")})};
+for(var i=0,styles=document.styleSheets;i<styles.length;i++)"nette"!==(styles[i].owningElement||styles[i].ownerNode).className?(styles[i].oldDisabled=styles[i].disabled,styles[i].disabled=!0):styles[i].addRule?styles[i].addRule(".nette-collapsed","display: none"):styles[i].insertRule(".nette-collapsed { display: none }",0);
+bs.onclick=function(b){for(var b=b||window.event,a=b.target||b.srcElement;a&&a.tagName&&"a"!==a.tagName.toLowerCase();)a=a.parentNode;if(!a||!a.rel)return!0;for(var d=a.getElementsByTagName("abbr")[0],c="next"===a.rel?a.nextSibling:document.getElementById(a.rel);1!==c.nodeType;)c=c.nextSibling;b=c.currentStyle?"none"==c.currentStyle.display:"none"==getComputedStyle(c,null).display;try{d.innerHTML=String.fromCharCode(b?9660:9658)}catch(e){}c.style.display=b?"code"===c.tagName.toLowerCase()?"inline":
+"block":"none";if("netteBluescreenIcon"===a.id){a=0;for(d=document.styleSheets;a<d.length;a++)if("nette"!==(d[a].owningElement||d[a].ownerNode).className)d[a].disabled=b?!0:d[a].oldDisabled}return!1};/*]]>*/</script>
+</body>
+</html>

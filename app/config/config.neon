@@ -1,0 +1,35 @@
+#
+# SECURITY WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+#
+# If you don't protect this directory from direct web access, anybody will be able to see your passwords.
+# http://nette.org/security-warning
+#
+common:
+	parameters:
+
+	php:
+		date.timezone: Europe/Bratislava
+		# session.save_path: "%tempDir%/sessions"
+		# zlib.output_compression: yes
+
+	nette:
+		session:
+			autoStart: smart
+
+	documentManagerExtension:
+		documentsDir: %appDir%/models/documents
+		proxyDir: %appDir%/models/proxies
+		hydratorDir: %appDir%/models/hydrators
+		dbname: 'sandbox'
+		uri: 'mongodb://localhost/sandbox'
+		cachePrefix: sanbox
+		metaDataCacheClass: '\Doctrine\Common\Cache\ArrayCache'
+
+	services:
+		authenticator:
+			class: Authenticator(@documentManager::getRepository(User))
+	factories:
+
+production < common:
+
+development < common:
