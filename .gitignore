@@ -1,3 +1,5 @@
 /nbproject/private/
 /nbproject
 /vendor/*
+/log/*.log
+/log/*.html
