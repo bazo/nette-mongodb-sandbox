@@ -1,0 +1,36 @@
+{
+    "hash": "13a47fb3fce4712f6935b8e7b949e631",
+    "packages": [
+        {
+            "package": "doctrine/common",
+            "version": "dev-master",
+            "source-reference": "4f78640efd3c9c5d790acdb99bcc9f9c10a1587a"
+        },
+        {
+            "package": "doctrine/mongodb",
+            "version": "dev-master",
+            "source-reference": "727a12d25ba12d18aa293bc6eb61f203a9545912"
+        },
+        {
+            "package": "doctrine/mongodb-odm",
+            "version": "dev-master",
+            "source-reference": "ed789d7e7d5a75d41b8d49e04a4c65bd97343a96"
+        },
+        {
+            "package": "nette/nette",
+            "version": "v2.0.3"
+        },
+        {
+            "package": "symfony/console",
+            "version": "dev-master",
+            "source-reference": "8c69d3a3e26885cad132a38ab0d7f287fb975296"
+        },
+        {
+            "package": "symfony/yaml",
+            "version": "dev-master",
+            "source-reference": "52807f723e8a9743852c2105f11bd01c5af7f977"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": []
+}

@@ -57,7 +57,7 @@ class DocumentManagerExtension extends \Nette\Config\CompilerExtension
 		$metadataCache->setNamespace($config['cachePrefix']);
 		$configuration->setMetadataCacheImpl($metadataCache);
 
-		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile($params['libsDir'] . '/Doctrine/ODM/MongoDB/Mapping/Annotations/DoctrineAnnotations.php');
+		\Doctrine\Common\Annotations\AnnotationRegistry::registerFile(VENDORS_DIR . '/doctrine/mongodb-odm/lib/Doctrine/ODM/MongoDB/Mapping/Annotations/DoctrineAnnotations.php');
 
 		$reader = new AnnotationReader();
 		$driverImpl = new AnnotationDriver($reader, $config['documentsDir']);

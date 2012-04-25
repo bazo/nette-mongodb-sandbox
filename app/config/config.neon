@@ -22,7 +22,7 @@ common:
 		hydratorDir: %appDir%/models/hydrators
 		dbname: 'sandbox'
 		uri: 'mongodb://localhost/sandbox'
-		cachePrefix: sanbox
+		cachePrefix: sandbox
 		metaDataCacheClass: '\Doctrine\Common\Cache\ArrayCache'
 
 	services:

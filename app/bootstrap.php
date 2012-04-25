@@ -7,8 +7,9 @@ use Nette\Application\Routers\Route;
 
 
 // Load Nette Framework
-require LIBS_DIR . '/Nette/loader.php';
-
+define('VENDORS_DIR', __DIR__ . '/../vendor');
+require_once VENDORS_DIR . '/nette/nette/Nette/loader.php';
+require_once VENDORS_DIR . '/autoload.php';
 
 // Configure application
 $configurator = new Nette\Config\Configurator;
